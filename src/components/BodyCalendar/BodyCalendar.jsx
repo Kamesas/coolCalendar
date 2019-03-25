@@ -1,10 +1,14 @@
 import React from "react";
 import stl from "./BodyCalendar.module.sass";
+import Day from "./Day/Day";
 
-const BodyCalendar = () => {
+const BodyCalendar = ({ renderMonth }) => {
   return (
     <div className={stl.BodyCalendar}>
-      <h2>Body calendar</h2>
+      {renderMonth &&
+        renderMonth.map(day => {
+          return <Day key={day.format("DD MM YY")} day={day} />;
+        })}
     </div>
   );
 };
