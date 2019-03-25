@@ -9,7 +9,6 @@ class Calendar extends Component {
   render() {
     return (
       <div className={stl.calendar}>
-        <h1>Calendar</h1>
         <MonthName />
         <BodyCalendar />
         <CurrentDay />
