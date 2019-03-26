@@ -5,7 +5,9 @@
   border-right: 1px solid #ccc
   box-sizing: border-box   
   padding-right: 0 !important
-  padding-left: 0 !important
+  padding-left: 0 !important 
+  display: flex
+  flex-direction: column
   .BodyCalendarCurrentMonth
     display: flex
     justify-content: space-between
@@ -43,16 +45,16 @@
     margin-bottom: 8px
     padding-top: 6px
     border-top: 1px solid #ccc
-    padding-left: 10px
+    padding-left: 8px
     > div     
       width: 100%
       color: #C2C3D4
 .BodyCalendar   
   display: flex
-  flex-wrap: wrap
+  flex-wrap: wrap  
+  flex-grow: 1
   > div
-    width: calc(100% / 7)
-    min-height: 80px
+    width: calc(100% / 7)    
     box-sizing: border-box
     border-left: 1px solid #ddd
     border-bottom: 1px solid #ddd
