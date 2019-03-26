@@ -1,10 +1,63 @@
 @import '../../smart-grid.sass'
-  
-.BodyCalendar
-  border-right: 1px solid #E9E9F4
-  box-sizing: border-box  
-  +size(7)  
+
+.wrappBodyCalendar 
+  +size(7) 
+  border-right: 1px solid #ccc
+  box-sizing: border-box   
+  padding-right: 0 !important
+  padding-left: 0 !important
+  .BodyCalendarCurrentMonth
+    display: flex
+    justify-content: space-between
+    align-items: center
+    h1
+      //+size(8)      
+      color: #7376FB
+      font-size: 32px
+      margin: 20px 0
+      font-weight: bold
+      padding-left: 26px
+      span
+        font-weight: normal
+        font-size: 20px
+        color: #CECEED
+    .btnAdd     
+      margin-right: 11% 
+      display: flex
+      justify-content: center
+      line-height: 15px     
+      width: 20px
+      height: 20px
+      border-radius: 50%
+      border: 1px solid #ccc
+      color: #bbb
+      cursor: pointer
+      font-size: 20px
+      &:hover
+        color: #aaa
+        border: 1px solid #bbb
+
+  .BodyCalendarWeekDay
+    display: flex
+    justify-content: space-between
+    margin-bottom: 8px
+    padding-top: 6px
+    border-top: 1px solid #ccc
+    padding-left: 10px
+    > div     
+      width: 100%
+      color: #C2C3D4
+.BodyCalendar   
   display: flex
   flex-wrap: wrap
   > div
     width: calc(100% / 7)
+    min-height: 80px
+    box-sizing: border-box
+    border-left: 1px solid #ddd
+    border-bottom: 1px solid #ddd
+    padding-left: 3px
+    &:nth-child(-n+7)
+      border-top: 1px solid #ddd
+    &:nth-child(7n)
+      border-right: 1px solid #ddd

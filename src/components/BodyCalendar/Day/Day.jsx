@@ -8,6 +8,9 @@ const Day = ({ day }) => {
   if (day.format("DD MM YY") === dayjs().format("DD MM YY")) {
     cls.push(stl.currentDay);
   }
+  if (day.format("MM YYYY") === dayjs().format("MM YYYY")) {
+    cls.push(stl.currentMonth);
+  }
 
   return (
     <div className={cls.join(" ")}>
