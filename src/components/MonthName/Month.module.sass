@@ -1,6 +1,39 @@
 @import '../../smart-grid.sass'
 
 .MonthName  
-  background-color: #666AEF
-  +size(1.5)
+  //background-color: #666AEF
+  background: linear-gradient(0deg, #4B4FDE 15%, #7A7EFD 85%)
+  +size(1.2)
   border-radius: 10px 0 0 10px
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-around
+  > div
+    width: 80%
+    color: #fff
+    font-weight: bold
+    font-size: 18px
+    padding: 5px 0
+    text-align: center
+    cursor: pointer
+  .currMonth
+    background-color: #4E52D9
+    box-shadow: 0 0 2px 0px #fff
+    border-radius: 5px
+    position: relative
+    &:after
+      content: ''
+      position: absolute
+      background-color: #fff
+      display: block
+      width: 63px
+      height: 124px
+      border-radius: 50%
+      top: -45px
+      right: -111px
+      transform: rotate(90deg)
+      z-index: 1   
+
+  .currYear
+    opacity: .5

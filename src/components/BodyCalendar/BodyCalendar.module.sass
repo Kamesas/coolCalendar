@@ -1,43 +1,49 @@
 @import '../../smart-grid.sass'
 
 .wrappBodyCalendar 
-  +size(7) 
-  border-right: 1px solid #ccc
+  +size(7.3) 
+  border-right: 2px solid #ccc
   box-sizing: border-box   
   padding-right: 0 !important
   padding-left: 0 !important 
   display: flex
   flex-direction: column
+  z-index: 2
+  
   .BodyCalendarCurrentMonth
     display: flex
     justify-content: space-between
-    align-items: center
-    h1
-      //+size(8)      
+    align-items: center   
+    h1        
       color: #7376FB
-      font-size: 32px
+      font-size: 30px
       margin: 20px 0
       font-weight: bold
       padding-left: 26px
       span
         font-weight: normal
-        font-size: 20px
+        font-size: 18px
         color: #CECEED
     .btnAdd     
-      margin-right: 11% 
-      display: flex
-      justify-content: center
-      line-height: 15px     
+      margin-right: 11%      
+      position: relative   
       width: 20px
-      height: 20px
+      height: 20px      
       border-radius: 50%
       border: 1px solid #ccc
       color: #bbb
       cursor: pointer
-      font-size: 20px
+      font-size: 20px      
+      &:after
+        content: '+'
+        position: absolute
+        right: 3px
+        top: -6px
       &:hover
         color: #aaa
         border: 1px solid #bbb
+     
+        
 
   .BodyCalendarWeekDay
     display: flex
@@ -56,10 +62,10 @@
   > div
     width: calc(100% / 7)    
     box-sizing: border-box
-    border-left: 1px solid #ddd
+    border-right: 1px solid #ddd
     border-bottom: 1px solid #ddd
     padding-left: 3px
     &:nth-child(-n+7)
       border-top: 1px solid #ddd
     &:nth-child(7n)
-      border-right: 1px solid #ddd
+      border-right: none

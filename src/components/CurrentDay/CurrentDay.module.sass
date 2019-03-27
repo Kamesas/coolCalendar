@@ -2,4 +2,54 @@
   
 .CurrentDay
   +size(3.5)
-  border-radius: 0 10px 10px 0
+  border-radius: 0 10px 10px  
+  display: flex
+  flex-direction: column
+  .date
+    border-bottom: 1px solid #ccc
+    margin-right: -45px
+    margin-left: -15px   
+    h2      
+      color: #9393B0
+      font-size: 30px
+      margin: 20px 0
+      font-weight: bold
+      text-align: center    
+      span
+        font-weight: normal
+        color: #9393B0
+  ul
+    flex-grow: 1
+    margin-top: 20px
+    li
+      border-bottom: 1px solid #ccc
+      font-size: 20px
+      margin-bottom: 20px
+      padding-bottom: 20px
+      color: #B9BACC
+      font-weight: bold
+      position: relative
+      padding-left: 30px
+      &:last-child
+        border-bottom: none
+      span
+        display: block
+        font-size: 16px
+        font-weight: normal
+        color: #D0D1E1
+      b
+        position: absolute
+        font-size: 70px
+        color: #FE7F80
+        top: -56px
+        left: 0
+  .inputFooter
+    border-top: 1px solid #ccc
+    margin-right: -45px
+    margin-left: -15px
+    input
+      margin: 30px
+      width: 90%
+      border: none 
+      outline: none 
+      text-align: center

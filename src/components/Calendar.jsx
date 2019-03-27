@@ -3,7 +3,10 @@ import stl from "./Calendar.module.sass";
 import MonthName from "./MonthName/MonthName";
 import BodyCalendar from "./BodyCalendar/BodyCalendar";
 import CurrentDay from "./CurrentDay/CurrentDay";
+
 import dayjs from "dayjs";
+import advancedFormat from "dayjs/plugin/advancedFormat";
+dayjs.extend(advancedFormat);
 
 const weekDay = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -24,23 +27,39 @@ class Calendar extends Component {
     do {
       arrDays.push(startOf.add(i, "day"));
       i++;
-      //console.log(arrDays[arrDays.length - 1]);
     } while (arrDays[arrDays.length - 1].format("DD MM YY") !== endOf);
 
     return arrDays;
   }
 
+  changeDate = (month, direction) => {
+    if (direction === "next") {
+      this.setState({ m: this.state.m.add(month, "month") });
+    } else {
+      this.setState({ m: this.state.m.subtract(month, "month") });
+    }
+  };
+
+  refreshDate = () => {
+    this.setState({ m: dayjs() });
+  };
+
   render() {
     const { m } = this.state;
+
     return (
       <div className={stl.calendar}>
-        <MonthName />
+        <MonthName
+          m={m}
+          changeDate={this.changeDate}
+          refreshDate={this.refreshDate}
+        />
         <BodyCalendar
           renderMonth={this.renderMonth()}
           weekDay={weekDay}
           m={m}
         />
-        <CurrentDay />
+        <CurrentDay m={m} />
       </div>
     );
   }

@@ -10,9 +10,7 @@ const BodyCalendar = ({ m, renderMonth, weekDay }) => {
           <h1>
             {m.format("MMMM,")} <span>{m.format("YYYY")}</span>
           </h1>
-          <div className={stl.btnAdd}>
-            <span>+</span>
-          </div>
+          <div className={stl.btnAdd} />
         </div>
 
         <div className={stl.BodyCalendarWeekDay}>
