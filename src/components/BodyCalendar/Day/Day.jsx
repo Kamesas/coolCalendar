@@ -10,7 +10,7 @@ class Day extends Component {
   };
 
   render() {
-    const { day } = this.props;
+    const { day, notes } = this.props;
     let cls = [stl.day];
 
     if (day.format("DD MM YY") === dayjs().format("DD MM YY")) {
@@ -22,7 +22,21 @@ class Day extends Component {
 
     return (
       <div className={cls.join(" ")} onClick={() => this.selectedDay(day)}>
-        <div>{day.date()}</div>
+        <div className={stl.dayInner}>
+          <div className={stl.date}>{day.date()}</div>
+
+          <div className={stl.noteItem}>
+            {notes.map(note => {
+              if (note.date === day.format("DD MM YYYY")) {
+                return (
+                  <span key={note.id} style={{ backgroundColor: note.color }} />
+                );
+              } else {
+                return null;
+              }
+            })}
+          </div>
+        </div>
       </div>
     );
   }

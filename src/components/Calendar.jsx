@@ -88,6 +88,7 @@ class Calendar extends Component {
           renderMonth={this.renderMonth()}
           weekDay={weekDay}
           selectedDay={this.selectedDay}
+          notes={notes}
           m={m}
         />
         <CurrentDay
