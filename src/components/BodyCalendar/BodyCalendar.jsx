@@ -2,7 +2,7 @@ import React from "react";
 import stl from "./BodyCalendar.module.sass";
 import Day from "./Day/Day";
 
-const BodyCalendar = ({ m, renderMonth, weekDay }) => {
+const BodyCalendar = ({ m, renderMonth, weekDay, selectedDay }) => {
   return (
     <div className={stl.wrappBodyCalendar}>
       <div className={stl.headerBodyCalendar}>
@@ -23,7 +23,13 @@ const BodyCalendar = ({ m, renderMonth, weekDay }) => {
       <div className={stl.BodyCalendar}>
         {renderMonth &&
           renderMonth.map(day => {
-            return <Day key={day.format("DD MM YY")} day={day} />;
+            return (
+              <Day
+                key={day.format("DD MM YY")}
+                day={day}
+                selectedDay={selectedDay}
+              />
+            );
           })}
       </div>
     </div>

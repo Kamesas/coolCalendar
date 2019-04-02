@@ -1,7 +1,9 @@
 import React from "react";
 import stl from "./CurrentDay.module.sass";
+import AddNote from "./AddNote/AddNote";
+import NoteList from "./NoteList/NoteList";
 
-const CurrentDay = ({ m }) => {
+const CurrentDay = ({ m, addNote, dayjs, notes }) => {
   return (
     <div className={stl.CurrentDay}>
       <div className={stl.date}>
@@ -9,19 +11,12 @@ const CurrentDay = ({ m }) => {
           {m.format("dddd,")} <span>{m.format("Do")}</span>
         </h2>
       </div>
-      <ul>
-        <li>
-          <b>.</b> Item1 <span>10.45</span>
-        </li>
-        <li>
-          <b>.</b>Item2 <span>10.45</span>
-        </li>
-        <li>
-          <b>.</b>Item3 <span>10.45</span>
-        </li>
-      </ul>
+
+      <NoteList notes={notes} m={m} />
+
+      <ul />
       <div className={stl.inputFooter}>
-        <input type="text" placeholder="Add new note" />
+        <AddNote addNote={addNote} m={m} />
       </div>
     </div>
   );

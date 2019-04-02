@@ -1,22 +1,31 @@
-import React from "react";
+import React, { Component } from "react";
 import stl from "./Day.module.sass";
 import dayjs from "dayjs";
 
-const Day = ({ day }) => {
-  let cls = [stl.day];
+class Day extends Component {
+  state = {};
 
-  if (day.format("DD MM YY") === dayjs().format("DD MM YY")) {
-    cls.push(stl.currentDay);
-  }
-  if (day.format("MM YYYY") === dayjs().format("MM YYYY")) {
-    cls.push(stl.currentMonth);
-  }
+  selectedDay = day => {
+    this.props.selectedDay(day);
+  };
 
-  return (
-    <div className={cls.join(" ")}>
-      <div>{day.date()}</div>
-    </div>
-  );
-};
+  render() {
+    const { day } = this.props;
+    let cls = [stl.day];
+
+    if (day.format("DD MM YY") === dayjs().format("DD MM YY")) {
+      cls.push(stl.currentDay);
+    }
+    if (day.format("MM YYYY") === dayjs().format("MM YYYY")) {
+      cls.push(stl.currentMonth);
+    }
+
+    return (
+      <div className={cls.join(" ")} onClick={() => this.selectedDay(day)}>
+        <div>{day.date()}</div>
+      </div>
+    );
+  }
+}
 
 export default Day;
