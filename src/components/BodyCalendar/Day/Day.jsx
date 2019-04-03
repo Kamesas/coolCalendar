@@ -3,8 +3,6 @@ import stl from "./Day.module.sass";
 import dayjs from "dayjs";
 
 class Day extends Component {
-  state = {};
-
   selectedDay = day => {
     this.props.selectedDay(day);
   };
@@ -18,6 +16,9 @@ class Day extends Component {
     }
     if (day.format("MM YYYY") === dayjs().format("MM YYYY")) {
       cls.push(stl.currentMonth);
+    }
+    if (day.format("DD MM YYYY") === this.props.m.format("DD MM YYYY")) {
+      cls.push(stl.selectedDay);
     }
 
     return (

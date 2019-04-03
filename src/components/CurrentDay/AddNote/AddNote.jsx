@@ -43,6 +43,7 @@ class AddNote extends Component {
   }
 
   render() {
+    console.log(this.props.m.format("DD MM HH:MM:ss"));
     return (
       <form onSubmit={this.addNote}>
         <input

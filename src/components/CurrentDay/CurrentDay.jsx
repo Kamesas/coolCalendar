@@ -3,7 +3,7 @@ import stl from "./CurrentDay.module.sass";
 import AddNote from "./AddNote/AddNote";
 import NoteList from "./NoteList/NoteList";
 
-const CurrentDay = ({ m, addNote, dayjs, notes }) => {
+const CurrentDay = ({ m, addNote, notes, deleteNote }) => {
   return (
     <div className={stl.CurrentDay}>
       <div className={stl.date}>
@@ -12,9 +12,8 @@ const CurrentDay = ({ m, addNote, dayjs, notes }) => {
         </h2>
       </div>
 
-      <NoteList notes={notes} m={m} />
+      <NoteList notes={notes} m={m} deleteNote={deleteNote} />
 
-      <ul />
       <div className={stl.inputFooter}>
         <AddNote addNote={addNote} m={m} />
       </div>

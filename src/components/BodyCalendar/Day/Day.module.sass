@@ -10,7 +10,7 @@
     box-sizing: border-box
     border: 2px solid transparent
     &:hover
-      border: 2px solid #FE9192
+      border: 2px solid rgb(153, 155, 244)
       color: #aaa
       transition: all .5s ease
       cursor: pointer
@@ -30,17 +30,10 @@
 .currentMonth
   color: #9697F1
   font-weight: bold
-.currentDay
-  > div    
+.selectedDay  
+  .dayInner
+    border: 2px solid rgb(153, 155, 244)
+.currentDay  
+  .dayInner     
     border: 2px solid #FE9192
-
-// .dayInner
-//   display: flex
-//   flex-direction: column
-//   .date    
-//     flex-grow: 1
-//   .noteItem 
-//     b      
-//       font-size: 70px
-//       line-height: 0
     

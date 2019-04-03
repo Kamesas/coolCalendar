@@ -48,6 +48,12 @@ class Calendar extends Component {
     this.setState({ m: dayjs() });
   };
 
+  deleteNote = idNote => {
+    this.setState({
+      notes: this.state.notes.filter(note => note.id !== idNote)
+    });
+  };
+
   addNote = newNote => {
     console.log(newNote);
     this.setState({ notes: [newNote, ...this.state.notes] });
@@ -95,7 +101,7 @@ class Calendar extends Component {
           m={m}
           notes={notes}
           addNote={this.addNote}
-          dayjs={dayjs()}
+          deleteNote={this.deleteNote}
         />
       </div>
     );
