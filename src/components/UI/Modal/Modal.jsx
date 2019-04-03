@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import stl from "./Modal.module.sass";
 
 class Modal extends Component {
-  state = {};
+  state = { isShow: false };
   el = document.createElement("div");
 
   closeModal = () => {
